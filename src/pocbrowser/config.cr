@@ -10,7 +10,7 @@ module Pocbrowser
 
     #
     # This class stores all configurations for PoCBrowser.
-    # It is accessible as follows: Pocbrowser.config
+    # It is accessible as follows: Pocbrowser::Config.config
     # 
     class Config
         INSTANCE = Config.new
@@ -35,6 +35,17 @@ module Pocbrowser
             # Validate modes (belonging to the list of supported modes)
             modes.each do |mode|
                 abort "#{mode} is not a valid MODE" if !validator.is_valid_mode(mode)
+            end
+
+            # Check if the file (if provided) is ok
+            if filename != ""
+                abort "Invalid file: #{filename}" if !validator.is_valid_file(filename)
+                abort "Cannot specify both CVE and -f FILE" if targets.size != 0
+            end
+
+            # Load targets from file 
+            File.each_line(filename) do |line|
+                targets << line
             end
         end
 

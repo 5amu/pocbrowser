@@ -7,13 +7,4 @@ authors:
 description: |
   Browse multiple sources to find PoCs for CVEs
 
-# dependencies:
-#   pg:
-#     github: will/crystal-pg
-#     version: "~> 0.5"
-
-# development_dependencies:
-#   webmock:
-#     github: manastech/webmock.cr
-
 license: MIT
