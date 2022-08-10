@@ -1,11 +1,11 @@
 name: pocbrowser
-version: 0.1.0
+version: 1.0.0
 
 authors:
   - 5amu <casalinovalerio.cv@gmail.com>
 
-# description: |
-#   Short description of pocbrowser
+description: |
+  Browse multiple sources to find PoCs for CVEs
 
 # dependencies:
 #   pg:
@@ -16,4 +16,4 @@ authors:
 #   webmock:
 #     github: manastech/webmock.cr
 
-# license: MIT
+license: MIT
