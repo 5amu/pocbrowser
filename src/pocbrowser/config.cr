@@ -16,12 +16,13 @@ module Pocbrowser
         INSTANCE = Config.new
         
         property targets, modes : Array(String)
-        property filename : String
+        property filename, outfile : String
 
         def initialize
             @targets  = [] of String
             @modes    = [] of String
             @filename = ""
+            @outfile  = ""
         end
 
         def setup
