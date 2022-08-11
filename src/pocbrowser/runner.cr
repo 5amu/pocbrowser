@@ -7,11 +7,6 @@ module Pocbrowser
         private def print_results(results : Hash(String,Hash(String, Array(String))))
         end
 
-        private def export_to_file(results : Hash(String,Hash(String, Array(String))), fname : String)
-            File.write(fname, results.to_json)
-        end
-
-
         def run
             # Singleton instance returning configurations harvested
             # by Pocbrowser::CLI
@@ -66,7 +61,7 @@ module Pocbrowser
             end
 
             if config.outfile
-                export_to_file(results, config.outfile)
+                File.write(config.outfile, results.to_json)
             end
         end
     end
