@@ -10,9 +10,9 @@ module Pocbrowser
   ]
 
   MODE_TO_SCRAPER = {
-    "yt" => Pocbrowser::YoutubeScraper,
-    "gh" => Pocbrowser::GithubScraper,
-    "cb" => Pocbrowser::CveBaseScraper,
-    "ed" => Pocbrowser::ExploitDBScraper,
+    "yt" => Pocbrowser::YoutubeScraper.new,
+    "gh" => Pocbrowser::GithubScraper.new,
+    "cb" => Pocbrowser::CveBaseScraper.new,
+    "ed" => Pocbrowser::ExploitDBScraper.new,
   }
 end

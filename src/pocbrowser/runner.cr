@@ -39,7 +39,7 @@ module Pocbrowser
           # https://crystal-lang.org/reference/1.5/guides/concurrency.html
           spawn do
             # Iterate between scrapers based on defined modes
-            MODE_TO_SCRAPER[mode].new.parse(target) do |output|
+            MODE_TO_SCRAPER[mode].parse(target) do |output|
               output.each do |result|
                 results[target][mode] << result
               end
