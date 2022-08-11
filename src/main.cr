@@ -8,13 +8,13 @@
 require "./pocbrowser/*"
 
 module Pocbrowser
-    class Main
-        def main(args)
-            Pocbrowser::CLI.new args
-            Pocbrowser::Config.config.setup
-            Pocbrowser::Runner.new.run
-        end
+  class Main
+    def main(args)
+      Pocbrowser::CLI.new args
+      Pocbrowser::Config.config.setup
+      Pocbrowser::Runner.new.run
     end
+  end
 end
 
 Pocbrowser::Main.new.main ARGV

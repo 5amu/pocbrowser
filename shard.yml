@@ -1,4 +1,5 @@
 name: pocbrowser
+repository: "https://github.com/5amu/pocbrowser"
 version: 1.0.0
 
 authors:
@@ -8,3 +9,11 @@ description: |
   Browse multiple sources to find PoCs for CVEs
 
 license: MIT
+
+development_dependencies:
+    ameba:
+      github: veelenga/ameba
+
+targets:
+  pocbrowser:
+    main: src/main.cr
