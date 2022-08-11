@@ -22,7 +22,7 @@ jobs:
           crystal: 1.5
 
       - name: compile pocbrowser
-        run: shards build --release --static
+        run: shards build --release
 
       - name: release
         uses: softprops/action-gh-release@v1
