@@ -41,7 +41,8 @@ module Pocbrowser
           return
         end
       end
-      yield ["lolz", "lolz2"]
+
+      yield results
     end
   end
 end
