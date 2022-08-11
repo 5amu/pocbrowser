@@ -1,3 +1,6 @@
+[![Validate](https://github.com/5amu/pocbrowser/actions/workflows/validate.yml/badge.svg)](https://github.com/5amu/pocbrowser/actions/workflows/validate.yml)
+[![Release](https://github.com/5amu/pocbrowser/actions/workflows/release.yml/badge.svg)](https://github.com/5amu/pocbrowser/actions/workflows/release.yml)
+
 # PoC Browser 🔍
 
 This is very similar to another project of mine, but I implemented it using [Crystal](https://crystal-lang.org/) because "Why Not?"
