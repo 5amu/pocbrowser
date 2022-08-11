@@ -1,0 +1,41 @@
+name: Validate
+
+on:
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+jobs:
+  format:
+    name: Check Code Formatting
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: 1.5
+
+      - name: format code
+        run: crystal tool format --check
+
+  ameba:
+    name: Lint with Ameba
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: setup crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: 1.5
+
+      - name: install shards
+        run: shards install --ignore-crystal-version
+
+      - name: run ameba
+        run: bin/ameba

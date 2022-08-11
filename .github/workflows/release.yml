@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release ${{github.ref}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      
+      - name: setup crystal
+        uses: crystal-lang/install-crystal@v1
+        with:
+          crystal: 1.5
+
+      - name: compile pocbrowser
+        run: shards build --release
+
+      - name: release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: bin/pocbrowser
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
