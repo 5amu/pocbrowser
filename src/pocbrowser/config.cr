@@ -41,12 +41,13 @@ module Pocbrowser
             if filename != ""
                 abort "Invalid file: #{filename}" if !validator.is_valid_file(filename)
                 abort "Cannot specify both CVE and -f FILE" if targets.size != 0
+                # Load targets from file 
+                File.each_line(filename) do |line|
+                    targets << line
+                end
             end
 
-            # Load targets from file 
-            File.each_line(filename) do |line|
-                targets << line
-            end
+            abort "Provide at least one target" if targets.size == 0
         end
 
         def self.config
