@@ -24,11 +24,9 @@ module Pocbrowser
           data["pocs"].as_a.each do |poc|
             results << poc.as_s
           end
-
         rescue exception
           yield results
           return
-
         end
 
         # Finally return the results
