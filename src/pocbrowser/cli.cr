@@ -35,6 +35,7 @@ module Pocbrowser
                 parser.on("-f F", "--file=FILE", "Newline separated CVE list in file") { |fname| @config.filename = fname }
                 parser.on("-o O", "--output=OUT", "Output file (json)") { |outfile| @config.outfile = outfile }
                 parser.on("-m M", "--mode=MODE", "Choose one or more modes to search for CVEs") { |mode| @config.modes << mode }
+                parser.on("-q", "--quiet", "Don't produce output in stdout") { @config.quiet = true }
                 parser.on("-v", "--version", "Show version") { puts "#{APPNAME} version #{VERSION}"; exit }
                 parser.on("-h", "--help", "Show help") { puts parser; puts ""; exit }
             

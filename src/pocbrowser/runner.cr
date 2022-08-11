@@ -59,9 +59,11 @@ module Pocbrowser
                 channel.receive
             end
             
-            # Print output
-            # print_results results
-            puts results
+            if !config.quiet
+                # Print output
+                # print_results results
+                puts results
+            end
 
             if config.outfile
                 export_to_file(results, config.outfile)

@@ -17,12 +17,14 @@ module Pocbrowser
         
         property targets, modes : Array(String)
         property filename, outfile : String
+        property quiet : Bool
 
         def initialize
             @targets  = [] of String
             @modes    = [] of String
             @filename = ""
             @outfile  = ""
+            @quiet    = false
         end
 
         def setup
