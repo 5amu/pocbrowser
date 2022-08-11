@@ -1,9 +1,19 @@
 require "json"
+require "colorize"
 require "./scrapers/dispach.cr"
 
 module Pocbrowser
   class Runner
     private def print_results(results : Hash(String, Hash(String, Array(String))))
+      results.each_key do |cve|
+        puts cve.colorize.fore(:red)
+        results[cve].each_key do |mode|
+          puts "==> Scraped with #{mode}".colorize.fore(:yellow)
+          results[cve][mode].each do |link|
+            puts "  ==> #{link}".colorize.fore(:blue)
+          end
+        end
+      end
     end
 
     def run
@@ -55,8 +65,7 @@ module Pocbrowser
 
       if !config.quiet
         # Print output
-        # print_results results
-        puts results
+        print_results results
       end
 
       if config.outfile != ""
