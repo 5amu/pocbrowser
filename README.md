@@ -1,9 +1,18 @@
-[![Validate](https://github.com/5amu/pocbrowser/actions/workflows/validate.yml/badge.svg)](https://github.com/5amu/pocbrowser/actions/workflows/validate.yml)
-[![Release](https://github.com/5amu/pocbrowser/actions/workflows/release.yml/badge.svg)](https://github.com/5amu/pocbrowser/actions/workflows/release.yml)
+<h1 align="center">
+    <br>
+    <img src="assets/pocbrowser_logo.png" width="200px" alt="DNSHunter">
+    <br>
+    🔎 POC Browser 🔍
+</h1>
 
-# PoC Browser 🔍
+<h4 align="center">A tool to find exploits for a given CVE.</h4>
 
-This is very similar to another project of mine, but I implemented it using [Crystal](https://crystal-lang.org/) because "Why Not?"
+<p align="center">
+    <img src="https://github.com/5amu/pocbrowser/actions/workflows/release.yml/badge.svg">
+    <img src="https://github.com/5amu/pocbrowser/actions/workflows/validate.yml/badge.svg">
+</p>
+
+---
 
 ## Very cool, but what it does?
 
@@ -13,6 +22,8 @@ The tool is basically a scraper, it scrapes some websites to find repositories, 
 * CVEBase, reading from [their repository](https://github.com/cvebase/cvebase.com/)
 * ExploitDB, scraping the search page
 * Youtube, scraping the results page
+
+I implemented it using [Crystal](https://crystal-lang.org/) because "Why Not?"
 
 ## Usage
 
@@ -43,6 +54,6 @@ OPTIONAL ARGUMENTS
     -h, --help                       Show help
 ```
 
-## Installation
+## Install
 
-Get it from the [release page](https://github.com/5amu/pocbrowser/releases) of this repo. It is built with a Github action, so you can trust the binary.
+Get it from the [release page](https://github.com/5amu/pocbrowser/releases) of this repo.
