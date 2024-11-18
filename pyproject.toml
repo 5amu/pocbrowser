@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "pocbrowser"
+version = "0.1.0"
+description = "Scrape websites to find PoCs for CVEs"
+authors = ["5amu <casalinovalerio.cv@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.scripts]
+pocbrowser = "pocbrowser:main"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
